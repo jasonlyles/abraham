@@ -1,4 +1,4 @@
-<script>
+<script type="importmap">
   Abraham.tours["<%= tour_name %>"] = new Shepherd.Tour(<%= Rails.configuration.abraham.tour_options.html_safe unless Rails.configuration.abraham.tour_options.nil? %>);
 
   <% if trigger != 'manual' %>
@@ -66,7 +66,7 @@
         // Don't start the tour if the first step's element is missing
         tourMayStart = tourMayStart && document.querySelector("<%= steps.first[1]['attachTo']['element'] %>");
         <% end %>
-        
+
         if (tourMayStart) {
           start();
         }
